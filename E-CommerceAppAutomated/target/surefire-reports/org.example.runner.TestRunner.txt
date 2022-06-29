@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: org.example.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 18, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 245.115 s <<< FAILURE! - in org.example.runner.TestRunner
+runScenario(org.example.runner.TestRunner)  Time elapsed: 9.854 s  <<< FAILURE!
+java.lang.AssertionError: user can not navigate to the required page expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+
+runScenario(org.example.runner.TestRunner)  Time elapsed: 8.384 s  <<< FAILURE!
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
+
+runScenario(org.example.runner.TestRunner)  Time elapsed: 12.4 s  <<< FAILURE!
+java.lang.AssertionError: user redirected to wrong webpage expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]
+

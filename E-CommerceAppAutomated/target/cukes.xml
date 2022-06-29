@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="18" time="242.941">
+<testcase classname="F01_Register | user could register with new account" name="guest user could register with valid data successfully" time="21.976">
+<system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type "Male".........................................passed
+And user enter first name "dummy" and last name "user"......................passed
+And user enter date of birth day "27" month "5" year "1993".................passed
+And user enter email "mahmoud25@example.com"................................passed
+And user fills password fields "P@ssw0rd102030" "P@ssw0rd102030"............passed
+And user clicks on register button..........................................passed
+Then user redirected to register completion page "https://demo.nopcommerce.com/registerresult/1?returnUrl=/".passed
+And a success message is displayed "Your registration completed"............passed
+And the color of this message is green "rgba(76, 177, 124, 1)"..............passed
+]]></system-out>
+</testcase>
+<testcase classname="F02_Login | user should be able to login to his account" name="guest user could successfully login using valid credentials" time="11.434">
+<system-out><![CDATA[Given user navigate to login page...........................................passed
+When user enter valid email "mahmoud25@example.com".........................passed
+And user enter valid password "P@ssw0rd102030"..............................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F03 | user could switch between available currencies" name="user could successfully select euro currency" time="13.706">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user select currency from dropdown list................................passed
+Then prices of shown items should be in euro currency.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item name" time="13.442">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "book" to search for it......................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items to his search "book".....................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item name 2" time="13.277">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "laptop" to search for it....................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items to his search "laptop"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item name 3" time="14.711">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "nike" to search for it......................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items to his search "nike".....................passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item sku" time="14.963">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "SCI_FAITH" to search for it.................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items using sku search "SCI_FAITH".............passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item sku 2" time="14.984">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "APPLE_CAM" to search for it.................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items using sku search "APPLE_CAM".............passed
+]]></system-out>
+</testcase>
+<testcase classname="F04 | guest user could search for items in search field" name="search using item sku 3" time="15.279">
+<system-out><![CDATA[Given user click on search field............................................passed
+When user enter item name like "SF_PRO_11" to search for it.................passed
+And user click on search button.............................................passed
+Then user redirected to result search page "https://demo.nopcommerce.com/search?q=".passed
+And user could find relative items using sku search "SF_PRO_11".............passed
+]]></system-out>
+</testcase>
+<testcase classname="F05 | user could hover to any category then select sub-category" name="user could hover to Apparel category then select Shoes subcategory" time="11.775">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user hover to Apparel category.........................................passed
+And user selects Shoes subcategory..........................................passed
+Then user should be redirected to subcategory page "https://demo.nopcommerce.com/shoes".passed
+]]></system-out>
+</testcase>
+<testcase classname="F06 | guest user could navigate between sliders" name="guest user select a slider and navigate to item page in slider" time="9.833">
+<failure message="user can not navigate to the required page expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]" type="java.lang.AssertionError"><![CDATA[Given user navigates to home page...........................................passed
+When user select a slider "1"...............................................passed
+And user click on the item in slider "1"....................................passed
+Then user should be redirected to the item page "https://demo.nopcommerce.com/nokia-lumia-1020".failed
+
+StackTrace:
+java.lang.AssertionError: user can not navigate to the required page expected [https://demo.nopcommerce.com/nokia-lumia-1020] but found [https://demo.nopcommerce.com/]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.example.stepDefinitions.D06_HomeSliders.directItemPage(D06_HomeSliders.java:26)
+	at ✽.user should be redirected to the item page "https://demo.nopcommerce.com/nokia-lumia-1020"(file:///F:/Learning/Courses/EgyptFWD/SecondProject/E-CommerceAppAutomated/src/main/resources/features/F06_HomeSliders.feature:7)
+]]></failure>
+</testcase>
+<testcase classname="F06 | guest user could navigate between sliders" name="guest user select a slider and navigate to item page in slider 2" time="8.377">
+<failure message="Index: 2, Size: 2" type="java.lang.IndexOutOfBoundsException"><![CDATA[Given user navigates to home page...........................................passed
+When user select a slider "2"...............................................failed
+And user click on the item in slider "2"....................................skipped
+Then user should be redirected to the item page "https://demo.nopcommerce.com/iphone-6".skipped
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepDefinitions.D06_HomeSliders.selectSlider(D06_HomeSliders.java:16)
+	at ✽.user select a slider "2"(file:///F:/Learning/Courses/EgyptFWD/SecondProject/E-CommerceAppAutomated/src/main/resources/features/F06_HomeSliders.feature:5)
+]]></failure>
+</testcase>
+<testcase classname="F07 | guest user could follow us using icons in social media section" name="user could navigate to social media links (Facebook,Twitter,RSS,Youtube)" time="12.285">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user scroll down to select social media icon and click on "facebook" icon.passed
+Then user should be redirected to the required page "https://www.facebook.com/nopCommerce".passed
+]]></system-out>
+</testcase>
+<testcase classname="F07 | guest user could follow us using icons in social media section" name="user could navigate to social media links (Facebook,Twitter,RSS,Youtube) 2" time="11.996">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user scroll down to select social media icon and click on "twitter" icon.passed
+Then user should be redirected to the required page "https://twitter.com/nopCommerce".passed
+]]></system-out>
+</testcase>
+<testcase classname="F07 | guest user could follow us using icons in social media section" name="user could navigate to social media links (Facebook,Twitter,RSS,Youtube) 3" time="12.394">
+<failure message="user redirected to wrong webpage expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]" type="java.lang.AssertionError"><![CDATA[Given user navigates to home page...........................................passed
+When user scroll down to select social media icon and click on "rss" icon...passed
+Then user should be redirected to the required page "https://demo.nopcommerce.com/new-online-store-is-open".failed
+
+StackTrace:
+java.lang.AssertionError: user redirected to wrong webpage expected [https://demo.nopcommerce.com/new-online-store-is-open] but found [https://demo.nopcommerce.com/news/rss/1]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.example.stepDefinitions.D07_FollowUs.directPage(D07_FollowUs.java:29)
+	at ✽.user should be redirected to the required page "https://demo.nopcommerce.com/new-online-store-is-open"(file:///F:/Learning/Courses/EgyptFWD/SecondProject/E-CommerceAppAutomated/src/main/resources/features/F07_FollowUs.feature:6)
+]]></failure>
+</testcase>
+<testcase classname="F07 | guest user could follow us using icons in social media section" name="user could navigate to social media links (Facebook,Twitter,RSS,Youtube) 4" time="13.57">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user scroll down to select social media icon and click on "youtube" icon.passed
+Then user should be redirected to the required page "https://www.youtube.com/user/nopCommerce".passed
+]]></system-out>
+</testcase>
+<testcase classname="F08 | guest user able to add items to wishlist" name="success message appear when user add an item to wishlist" time="13.055">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user click on wishlist button for item "HTC One M8 Android L 5.0 Lollipop".passed
+Then success message is shown to inform user that item has been added to wishlist.passed
+And color of wishlist success message should be "#4bb07a"...................passed
+]]></system-out>
+</testcase>
+<testcase classname="F08 | guest user able to add items to wishlist" name="quantity of items increments after adding an item to wishlist" time="15.377">
+<system-out><![CDATA[Given user navigates to home page...........................................passed
+When user click on wishlist button for item "HTC One M8 Android L 5.0 Lollipop".passed
+And user navigate to wishlist page..........................................passed
+Then quantity of items should be incremented in wishlist page...............passed
+]]></system-out>
+</testcase>
+</testsuite>
